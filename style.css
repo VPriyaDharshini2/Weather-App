@@ -149,7 +149,7 @@ body {
 }
 
 .weather-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.03);
 }
 
 /* Cities Page */
@@ -163,31 +163,27 @@ body {
 
 .city-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
   padding: 2rem;
 }
 
 .city-card {
-  background: white;
-  border-radius: 10px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s;
 }
 
 .city-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.03);
 }
 
 .city-card img {
   width: 60px;
   height: 60px;
-}
-
-.city-card h3 {
-  margin: 0.5rem 0 0.25rem;
 }
 
 /*Content Pages*/
@@ -261,3 +257,4 @@ footer {
     max-width: 300px;
   }
 }
+
