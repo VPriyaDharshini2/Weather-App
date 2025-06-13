@@ -129,7 +129,7 @@ body {
 .weather-card {
   background-color: white;
   border-radius: 10px;
-  padding: 25px 30px;
+  padding: 25px 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   max-width: 400px;
   width: 90%;
@@ -149,6 +149,36 @@ body {
 }
 
 .weather-card:hover {
+  transform: scale(1.03);
+}
+
+.hourly-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+  padding: 1rem;
+}
+
+.hourly-grid h3{
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top:50px ;
+  color: #0f172a;
+}
+
+.hour-block {
+  background-color: white;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  width: 120px;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.hour-block:hover {
   transform: scale(1.03);
 }
 
@@ -186,7 +216,7 @@ body {
   height: 60px;
 }
 
-/*Content Pages*/
+* Contact Pages */
 .contact-section {
   max-width: 700px;
   margin: 2rem auto;
@@ -233,7 +263,7 @@ body {
   background-color: #0369a1;
 }
 
-/*Footer*/
+/* Footer */
 footer {
   margin-top: auto;
   padding: 1rem 0;
@@ -243,7 +273,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/*Responsive*/
+/* Responsive */
 @media (max-width: 768px) {
   .nav-links {
     flex-direction: column;
