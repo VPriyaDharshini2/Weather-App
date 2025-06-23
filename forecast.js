@@ -1,9 +1,10 @@
+//Forecast JS
+
 async function getWeather() {
   const city = document.getElementById("cityInput").value;
   const apiKey = "a1f96c6d91c3c026ee78921c483c5717"; 
 
   try {
-    // Step 1: Get coordinates of the city
     const geoUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     const geoRes = await fetch(geoUrl);
     const geoData = await geoRes.json();
@@ -16,12 +17,10 @@ async function getWeather() {
     const lat = geoData.coord.lat;
     const lon = geoData.coord.lon;
 
-    // Step 2: Get hourly forecast using 2.5/forecast (works for free users)
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     const forecastRes = await fetch(forecastUrl);
     const forecastData = await forecastRes.json();
 
-    // Step 3: Display Current Weather (first entry)
     const current = forecastData.list[0];
     document.getElementById("weatherResult").innerHTML = `
     <div class="weather-card">
@@ -32,7 +31,6 @@ async function getWeather() {
       <p>Wind: ${current.wind.speed} m/s</p>
     `;
 
-    // Step 4: Display hourly forecast (next 8 time blocks = 24 hours)
     let hourlyHtml = `<div class="hourly-grid"><h3>Next 24h Forecast:</h3>`;
     for (let i = 0; i < 8; i++) {
       const hour = forecastData.list[i];
